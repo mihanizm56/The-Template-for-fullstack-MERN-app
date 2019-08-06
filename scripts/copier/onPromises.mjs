@@ -1,4 +1,3 @@
-export mkdir from "mkdirp";
 import {
 	access as nativeAccess,
 	readdir as nativeReaddir,

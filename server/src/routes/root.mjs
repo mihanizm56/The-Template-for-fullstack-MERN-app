@@ -1,9 +1,9 @@
 import express from "express";
-import sendSPA from "../controllers/app/app.mjs";
+import apiCtrl from "../controllers/api/api.mjs";
 
 const router = express.Router();
 
 /// send spa
-router.get("*", sendSPA.get);
+router.get("/api", apiCtrl.get);
 
 export default router;

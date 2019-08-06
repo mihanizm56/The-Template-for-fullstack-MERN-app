@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "copy": "cd scripts/copier && node interface",
+    "copy": "cd scripts/copier && node --experimental-modules interface.mjs",
     "client": "cd client && npm start",
     "build:client": "cd client && npm run build",
     "server:dev": "cd server && npm run dev",
@@ -21,5 +21,8 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0"
+  },
+  "dependencies": {
+    "mkdirp-promise": "^5.0.1"
   }
 }

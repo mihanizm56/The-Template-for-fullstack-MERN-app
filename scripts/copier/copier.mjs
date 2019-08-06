@@ -1,7 +1,8 @@
 import path from "path";
-import { access, readdir, readFile, writeFile, mkdir, lstat, rmdir, stat, unlink } from "./onPromises";
+import mkdir from "mkdirp-promise";
+import { access, readdir, readFile, writeFile, lstat, rmdir, stat, unlink } from "./onPromises.mjs";
 
-export class Copier {
+export default class Copier {
 	constructor({ arrayToCopy }) {
 		this.arrayToCopy = arrayToCopy;
 	}
@@ -43,5 +44,3 @@ export class Copier {
 		});
 	}
 }
-
-module.exports = Copier;
