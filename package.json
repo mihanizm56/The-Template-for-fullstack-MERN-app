@@ -15,7 +15,7 @@
     "install:server": "cd server && npm i",
     "install:client": "cd client && npm i",
     "install:all": "npm run install:server && npm run install:client && npm i",
-    "push": "git add . && git commit -m default && git push"
+    "push": "git add . && git commit -m default -n && git push"
   },
   "author": "",
   "license": "ISC",
