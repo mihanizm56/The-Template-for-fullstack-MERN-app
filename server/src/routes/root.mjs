@@ -3,7 +3,6 @@ import apiCtrl from "../controllers/api/api.mjs";
 
 const router = express.Router();
 
-/// send spa
 router.get("/api", apiCtrl.get);
 
 export default router;

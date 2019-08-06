@@ -34,7 +34,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(process.cwd(), "public")));
+app.use(express.static(path.join(process.cwd(), "public")));
+
 app.use("/", router);
 app.use((req, res, next) => {
 	next(createError(404));
