@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createAppStore, history } from "./redux/store";
-import { App } from "./containers";
+import { App } from "./modules";
 import { ConnectedRouter } from "connected-react-router";
 import "./styles/main.css";
 import "./styles/shared.css";
