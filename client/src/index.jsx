@@ -6,7 +6,7 @@ import { App } from "./modules";
 import { ConnectedRouter } from "connected-react-router";
 import "./styles/main.css";
 import "./styles/shared.css";
-import "./styles/keyframes/keyframes.css";
+import "./styles/keyframes.css";
 import "./assets/fonts/index.css";
 
 const ROOT_ELEMENT = document.getElementById("root");

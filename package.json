@@ -6,7 +6,7 @@
   "scripts": {
     "copy": "cd scripts/copier && node interface",
     "client": "cd client && npm start",
-    "build:client":"cd client && npm run build",
+    "build:client": "cd client && npm run build",
     "server:dev": "cd server && npm run dev",
     "server:prod": "cd server && npm run prod",
     "start": "cross-env-shell NODE_ENV=development concurrently --kill-others-on-fail \"npm run client\" \"npm run server:dev\"",
