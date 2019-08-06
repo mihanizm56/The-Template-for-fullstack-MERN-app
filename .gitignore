@@ -13,7 +13,7 @@ package-lock.json
 
 # production
 /client/build
-/server/build
+/server/public
 
 # variables
 .env
