@@ -1,6 +1,7 @@
 # Template for MERN monolith apps
 
 ### This template is a combination of the most common libs that I use and it contains the basic build configuration to deploying. You can choose your own stack from the list of libs below.
+### Note that this monolith template is made only for easy-in-deploy for the Heroku!
 
 Libs and biolerplates are included in the dependencies for the frontend:
   - CRA (the whole boilerplate)
