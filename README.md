@@ -1,9 +1,6 @@
 # Template for MERN monolith apps
 
-This template is a combination of the most common libs that I use 
-and it contains the basic build configuration to deploying
-
-This template is built on CRA (v2) and express-generator.
+### This template is a combination of the most common libs that I use and it contains the basic build configuration to deploying. You can choose your own stack from the list of libs below.
 
 Libs and biolerplates are included in the dependencies for the frontend:
   - CRA (the whole boilerplate)
@@ -51,12 +48,9 @@ Libs and biolerplates are included in the dependencies for the backend:
 Libs are included in the devDependencies for the backend:
   - nodemon
 
-# All you need is to choose your stack from the list 
-# and add/remove some other libs !
+## Installation
 
-### Installation
-
-Install the dependencies and devDependencies.
+Install all dependencies and devDependencies.
 
 ```sh
 $ npm run install:all
@@ -74,118 +68,57 @@ Start the whole project on your server
 $ npm run start
 ```
 
-### Development
-This template offers you the type of development where you can independently develop the frontend part and the backend part.
-To develop
+## Architecture Sollutions
 
+### Frontend:
+The frontend architecture is based on:
+- [arch.js](https://blog.maddevs.io/best-architecture-for-the-react-project-149b377b379d)
+- [redux-ducks](https://medium.com/@matthew.holman/what-is-redux-ducks-46bcb1ad04b7)
 
-### Plugins
+The backend architecture is based on:
+- [mvc](https://habr.com/ru/post/181772/)
 
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+## Development
+This template offers you the type of development where you can independently develop the frontend part and the backend part:
+  - To develop the frontend part I'm using CRA with the proxy to the port on the backend where I have my REST API. Or simply you can mock your requests in the file client/src/services/api/rest.js.
+  - To develop the backend part you can simply develop your REST API as a usual express app. SPA build is being served from the folder server/public and the controller for that is in folder server/controllers/spa!
+  - To deploy the app I use my own copy script which takes your CRA build and paste it to the served folder server/public.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+## All Useful Scripts:
 
-
-### Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
+#### Prepare all necessary dependencies for the Heroku in the heroku-prebuild phase:
 ```sh
-$ node app
-```
-
-Second Tab:
+$ npm run heroku-prebuild
+```  
+#### Build the whole app for the Heroku in build phase:
 ```sh
-$ gulp watch
-```
-
-(optional) Third:
+$ npm run build
+```  
+#### Build the CRA:
 ```sh
-$ karma test
-```
-#### Building for source
-For production release:
+$ npm run build:client
+```  
+#### Build the whole app and start it in your local computer:
 ```sh
-$ gulp build --prod
-```
-Generating pre-built zip archives for distribution:
+$ npm run start:local
+``` 
+#### Start the server in the production mode:
 ```sh
-$ gulp build dist --prod
-```
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
-
+$ npm run start
+```  
+#### Copy builded SPA static files and paste them to the server:
 ```sh
-cd dillinger
-docker build -t joemccann/dillinger:${package.json.version} .
-```
-This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
-
+$ npm run copy
+``` 
+#### Start CRA in development mode:
 ```sh
-docker run -d -p 8000:8080 --restart="always" <youruser>/dillinger:${package.json.version}
-```
-
-Verify the deployment by navigating to your server address in your preferred browser.
-
+$ npm run start:client
+``` 
+#### Start Server in development mode:
 ```sh
-127.0.0.1:8000
-```
-
-#### Kubernetes + Google Cloud
-
-See [KUBERNETES.md](https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md)
-
-
-### Todos
-
- - Write MORE Tests
- - Add Night Mode
-
-License
-----
-
-MIT
-
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+$ npm run server:dev
+``` 
+#### Stop nodejs processes:
+```sh
+$ npm run stop
+``` 
