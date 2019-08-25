@@ -1,2 +1,2 @@
-export * from "./main-layout";
-export * from "./page-route";
+export * from "./root-router";
+export * from "./page-routes";
